@@ -8,8 +8,18 @@ class HomeScreen extends StatefulWidget {
 }
 
 class MyBar extends AppBar {
-  MyBar({Key? key, required Widget title})
-      : super(key: key, title: title, actions: <Widget>[Icon(Icons.ac_unit)]);
+  MyBar(
+      {Key? key,
+      required Widget title,
+      Color backgroundColor = Colors.purple,
+      List<Widget>? actions,
+      Widget? leadingWidget})
+      : super(
+            key: key,
+            title: title,
+            actions: actions,
+            backgroundColor: backgroundColor,
+            leading: leadingWidget);
 }
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -20,6 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
       key: _scafoldKey,
       appBar: MyBar(
         title: Text("Home"),
+        backgroundColor: Colors.red,
       ),
       endDrawer: DrawerClass(),
       drawer: DrawerClass(),

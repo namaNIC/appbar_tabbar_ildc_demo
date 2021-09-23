@@ -1,5 +1,6 @@
-import 'package:appbar_tabbar_ildc_demo/home.dart';
-import 'package:appbar_tabbar_ildc_demo/tabbar.dart';
+import 'package:appbar_tabbar_ildc_demo/Swapping/swapping.dart';
+// import 'package:appbar_tabbar_ildc_demo/home.dart';
+// import 'package:appbar_tabbar_ildc_demo/tabbar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: TabbarClass(),
+      home: SwippingClass(),
     );
   }
 }
