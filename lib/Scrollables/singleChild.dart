@@ -19,33 +19,33 @@ class _SingleChildScrollDemoState extends State<SingleChildScrollDemo> {
     );
   }
 
+  Widget giveMeListViuewBuilder() {
+    return SizedBox(
+      height: 100,
+      child: ListView.builder(
+        itemCount: 100,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              color: Colors.red,
+              width: 100,
+              height: 100,
+            ),
+          );
+        },
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Scrollables'),
       ),
-      body: ListView(
-        children: [
-          ListTile(
-            leading: Icon(Icons.star),
-            trailing: Icon(Icons.account_balance),
-            title: Text("Bank Information"),
-            subtitle: Text("4000 0000 0000 xxxx"),
-            onTap: () {
-              print("isRedClick $isRedClick");
-            },
-          ),
-          NewWidget(
-            color: Colors.black,
-            onClick: () {
-              // print("Action Performed");
-              isRedClick = !isRedClick;
-              print("isRedClick $isRedClick");
-            },
-          )
-        ],
-      ),
+      body: giveMeListViuewBuilder(),
     );
   }
 }
