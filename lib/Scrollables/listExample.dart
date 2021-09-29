@@ -15,27 +15,25 @@ class _ListExampleState extends State<ListExample> {
       appBar: AppBar(
         title: Text('ListView'),
       ),
-      body: ListView.builder(
-        itemCount: myList.length,
+      body: ListView.separated(
         itemBuilder: (context, index) {
-          return Container(
-            // color: Colors.red,
-            child: Column(
-              children: [
-                ListTile(
-                  // leading: Placeholder(),
-                  title: myList[index],
-                  subtitle: Text('Subtitle'),
-                  // trailing: Placeholder(),
-                ),
-                Divider(
-                  color: Colors.red,
-                  height: 2,
-                )
-              ],
+          return ListTile(
+            // leading: Placeholder(),
+            title: myList[index],
+            subtitle: Text('Subtitle'),
+            // trailing: Placeholder(),
+          );
+        },
+        separatorBuilder: (ctx, i) {
+          return Padding(
+            padding: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+            child: Divider(
+              color: Colors.red,
+              height: 15,
             ),
           );
         },
+        itemCount: myList.length,
       ),
     );
   }
