@@ -45,7 +45,11 @@ class _SingleChildScrollDemoState extends State<SingleChildScrollDemo> {
       appBar: AppBar(
         title: Text('Scrollables'),
       ),
-      body: giveMeListViuewBuilder(),
+      body: NewWidget(
+          color: Colors.black,
+          onClick: (value) {
+            print("object $value");
+          }),
     );
   }
 }
@@ -53,7 +57,7 @@ class _SingleChildScrollDemoState extends State<SingleChildScrollDemo> {
 class NewWidget extends StatelessWidget {
   final Color color;
   final String? strValue;
-  final Function onClick;
+  final Function(int) onClick;
   const NewWidget({
     Key? key,
     required this.color,
@@ -73,7 +77,7 @@ class NewWidget extends StatelessWidget {
               InkWell(
                 onTap: () {
                   print("Red Click");
-                  onClick();
+                  onClick(1);
                 },
                 child: Container(
                   height: 150,
@@ -84,6 +88,7 @@ class NewWidget extends StatelessWidget {
               InkWell(
                 onTap: () {
                   print("Blue Click");
+                  onClick(2);
                 },
                 child: Container(
                   height: 150,
