@@ -1,3 +1,4 @@
+import 'package:appbar_tabbar_ildc_demo/Model/ModelData.dart';
 import 'package:flutter/material.dart';
 
 class GridExample extends StatefulWidget {
@@ -8,51 +9,37 @@ class GridExample extends StatefulWidget {
 }
 
 class _GridExampleState extends State<GridExample> {
-  List myList = List.generate(50, (index) => Text('data $index'));
+  List<ModelDemo> myList =
+      arrModelData(); //List.generate(50, (index) => Text('data $index'));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('GridView'),
       ),
-      body: GridView(
-        children: [
-          Container(
-            color: Colors.red,
-          ),
-          Container(
-            color: Colors.green,
-          ),
-          Container(
-            color: Colors.blue,
-          ),
-          Container(
-            color: Colors.amber,
-          ),
-          Container(
-            color: Colors.black,
-          ),
-          Container(
-            color: Colors.red,
-          ),
-          Container(
-            color: Colors.green,
-          ),
-          Container(
-            color: Colors.blue,
-          ),
-          Container(
-            color: Colors.amber,
-          ),
-          Container(
-            color: Colors.black,
-          ),
-        ],
+      body: GridView.builder(
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             childAspectRatio: 1,
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
             maxCrossAxisExtent: 150),
+        itemCount: myList.length,
+        itemBuilder: (ctx, intNaman) {
+          return GridTile(
+            header: Container(
+              child: Text(myList[intNaman].title ?? ""),
+              color: Colors.white,
+            ),
+            child: Image.network(
+              myList[intNaman].image ?? "",
+              fit: BoxFit.contain,
+            ),
+            footer: Container(
+              child: Text(myList[intNaman].subTitle ?? ""),
+              color: Colors.white,
+            ),
+          );
+        },
       ),
     );
   }

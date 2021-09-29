@@ -7,6 +7,7 @@ class ListExample extends StatefulWidget {
   _ListExampleState createState() => _ListExampleState();
 }
 
+// View
 class _ListExampleState extends State<ListExample> {
   List myList = List.generate(50, (index) => Text('data $index'));
   @override
