@@ -45,6 +45,31 @@ class _SliverAppBarClassState extends State<SliverAppBarClass> {
         slivers: [
           returnSliverAppBar(),
           returnSliverGrid(),
+          SliverList(
+            delegate:
+                SliverChildBuilderDelegate((BuildContext context, int index) {
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 50,
+                  color: Colors.lightBlue[100 * (index % 9)],
+                  // child: Text("NAman"),
+                ),
+              );
+            }, childCount: 5),
+          ),
+          // Sliver
+          SliverFixedExtentList(
+              delegate:
+                  SliverChildBuilderDelegate((BuildContext context, int index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    color: Colors.deepOrange,
+                  ),
+                );
+              }),
+              itemExtent: 100)
         ],
       ),
     );
