@@ -23,21 +23,28 @@ class _SliverAppBarClassState extends State<SliverAppBarClass> {
     );
   }
 
+  Widget returnSliverGrid() {
+    return SliverGrid(
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 100,
+          mainAxisSpacing: 10.0,
+          crossAxisSpacing: 10.0,
+          childAspectRatio: 0.5),
+      delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
+        return Container(
+          color: Colors.teal[100 * (index % 9)],
+        );
+      }, childCount: 20),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
           returnSliverAppBar(),
-          SliverToBoxAdapter(
-            child: Column(
-              children: [
-                Placeholder(),
-                Placeholder(),
-                Placeholder(),
-              ],
-            ),
-          )
+          returnSliverGrid(),
         ],
       ),
     );
