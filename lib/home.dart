@@ -1,3 +1,4 @@
+import 'package:appbar_tabbar_ildc_demo/Utils/constant.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -92,7 +93,10 @@ class DrawerClass extends StatelessWidget {
             Container(
               color: Colors.amber,
               height: 40,
-              child: Text("Logout"),
+              child: Text(
+                "Logout",
+                style: kFont17HelveticaNRegular,
+              ),
             ),
             SizedBox(
               height: 20,

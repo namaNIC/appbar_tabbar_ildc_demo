@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-const mAppName = 'Gaolo';
-
 // Colors
 const kFontBlackColor = Color(0xFF1D1C1C);
 const kFontGrayColor = Color(0xFF626260);
