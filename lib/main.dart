@@ -2,6 +2,7 @@ import 'package:appbar_tabbar_ildc_demo/Scrollables/gridViewExample.dart';
 import 'package:appbar_tabbar_ildc_demo/Scrollables/listExample.dart';
 import 'package:appbar_tabbar_ildc_demo/Scrollables/singleChild.dart';
 import 'package:appbar_tabbar_ildc_demo/Slivers/sliver_AppBar.dart';
+import 'package:appbar_tabbar_ildc_demo/BottomNavigationBar/boottom_Navigationbar.dart';
 // import 'package:appbar_tabbar_ildc_demo/home.dart';
 // import 'package:appbar_tabbar_ildc_demo/tabbar.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: SliverAppBarClass(),
+      home: BottomNavigationbarClass(),
     );
   }
 }
