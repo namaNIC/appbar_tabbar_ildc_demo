@@ -1,6 +1,7 @@
 import 'package:appbar_tabbar_ildc_demo/TabPages/one.dart';
 import 'package:appbar_tabbar_ildc_demo/TabPages/three.dart';
 import 'package:appbar_tabbar_ildc_demo/TabPages/two.dart';
+import 'package:appbar_tabbar_ildc_demo/Utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class TabbarClass extends StatefulWidget {
@@ -16,13 +17,14 @@ class _TabbarClassState extends State<TabbarClass> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
+        extendBodyBehindAppBar: true,
         appBar: AppBar(
           title: Text("Tabbar"),
           bottom: TabBar(
             tabs: [
               Container(
                 height: 50,
-                color: Colors.red,
+                color: colorPrimary,
               ),
               Container(
                 height: 50,

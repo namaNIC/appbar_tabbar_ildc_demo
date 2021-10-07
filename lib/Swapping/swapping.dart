@@ -17,7 +17,12 @@ class _SwippingClassState extends State<SwippingClass> {
       appBar: MyBar(
         title: Text("Swapping"),
         backgroundColor: Colors.red,
-        actions: [Icon(Icons.access_alarm)],
+        actions: [
+          InkWell(
+            onTap: () {},
+            child: Icon(Icons.access_alarm),
+          ),
+        ],
         leadingWidget: Icon(Icons.access_time_filled_rounded),
       ),
       body: Center(
